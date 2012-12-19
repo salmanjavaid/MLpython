@@ -1,9 +1,11 @@
 from BeautifulSoup import BeautifulSoup
-import multiprocessing 
+import multiprocessing
+import os
 
 Index = 0
 TrIndex = 0
 f = open("D:\\Results\\Class9\\300000-350000\\300001.html", "r")
+os.path.getsize("D:\\Results\\Class9\\300000-350000\\300001.html");
 soup = BeautifulSoup(f)
 f.close()
 tables = soup.find('table')
@@ -14,8 +16,7 @@ for table in tables:
         trs = table.find("tr")
         for i in range(1,8):
             trs = trs.nextSibling.nextSibling
-            print trs.find("td").text
             td = trs.find("td")
-            print td.nextSibling.nextSibling.text
+            print trs.find("td").text + "  " + td.nextSibling.nextSibling.text
             
 
