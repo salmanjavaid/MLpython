@@ -1,0 +1,6 @@
+from lxml import etree
+data = open('result.html','r').read()
+doc = etree.HTML(data)
+
+for tr in doc.xpath('//table/tr[@class="trmenu1"]'):
+  print tr.xpath('./td/text()')

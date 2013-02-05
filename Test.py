@@ -3,7 +3,6 @@ from multiprocessing import Pool
 import os
 
 
-
 def printToFile(a):
     if os.path.exists("D:\\Results\\Class 10\\10-36000\\34040-34500\\" + str(a) + ".html") == 1: 
          if os.path.getsize("D:\\Results\\Class 10\\10-36000\\34040-34500\\" + str(a) + ".html") >= 6990:
@@ -11,7 +10,6 @@ def printToFile(a):
             Index = 0
             TrIndex = 0
             f = open("D:\\Results\\Class 10\\10-36000\\34040-34500\\" + str(a) + ".html", "r")
-            
             soup = BeautifulSoup(f)
             f.close()
             tables = soup.find('table')
